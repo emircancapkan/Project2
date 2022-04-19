@@ -1,40 +1,123 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+#include <stdbool.h>
 #include <string.h>
 #include <stdlib.h>
-#include <stdbool.h>
 
-struct password {
-  long long int username; 
-  char password [40];
-  int yes=0, no=0, repeat=0;
+    
+int main(void) {
+    int counter;
+    char username [40];
+    char password[40];
+    int yes = 0, no = 0;
+    bool voting1 = false, voting2 = false, voting3 = false ,voting4 = false;
+    
+    for (counter = 0; counter < 4; counter++) {
+        printf("Please enter your username:\n");
+        scanf("%s", username);
+        printf("Please enter your password:\n ");
+        scanf("%s", password);
+        
+if (strcmp(username, "20201701002") == 0 && strcmp(password, "emircan510")==0) {
+            if (voting1 == true){
+                printf("You have already voted!\n");}
+                else{
+        
+        int vote;
+                 printf("Please vote yes or no:\n");
+                 scanf("%d", &vote);
+                 switch(vote){
+                     case 1:
+                            printf("Your vote is saved!\n");
+                            yes = yes+1;
+                            voting1 = true;
+                            break;
+                    case 2:
+                            printf("Your vote is saved!\n");
+                            no =no+1;
+                            voting1 = true;
+                            break;}}
+} 
+    
+    else if (strcmp(username, "hesap2") == 0 && strcmp(password, "sifre2")==0) {
+            if (voting2 == true){
+                printf("You have already voted!\n");}
+                else{
+        
+        int vote;
+                 printf("Please vote yes or no:\n");
+                 scanf("%d", &vote);
+                 switch(vote){
+                     case 1:
+                            printf("Your vote is saved!\n");
+                            yes = yes+1;
+                            voting2 = true;
+                            break;
+                    case 2:
+                            printf("Your vote is saved!\n");
+                            no =no+1;
+                            voting2 = true;
+                            break;}}
 }
 
-int main() {
-    bool vote1 = false, vote2 = false, vote3 = false ,vote4 = false;
-    
-    while(repeat<=4) {
-        printf("please enter your username: ");
-        scanf("%lld", &username);
+    else if (strcmp(username, "hesap3") == 0 && strcmp(password, "sifre3")==0) {
+            if (voting3 == true){
+                printf("You have already voted!\n");}
+                else{
         
-        printf("please enter your password: ");
-        scanf("%s", &password);
+        int vote;
+                 printf("Please vote yes or no:\n");
+                 scanf("%d", &vote);
+                 switch(vote){
+                     case 1:
+                            printf("Your vote is saved!\n");
+                            yes = yes+1;
+                            voting3 = true;
+                            break;
+                    case 2:
+                            printf("Your vote is saved!\n");
+                            no =no+1;
+                            voting3 = true;
+                            break;}}
+}
+
+    else if (strcmp(username, "hesap4") == 0 && strcmp(password, "sifre4")==0) {
+            if (voting4 == true){
+                printf("You have already voted!\n");}
+                else{
         
-         if (strcmp(username, "20201701002") == 0 && strcmp(password, "emircan51")==0) {
-             
-             
-            
-         }
-        
-        
+        int vote;
+                 printf("Please vote yes or no:\n");
+                 scanf("%d", &vote);
+                 switch(vote){
+                     case 1:
+                            printf("Your vote is saved!\n");
+                            yes = yes+1;
+                            voting4 = true;
+                            break;
+                    case 2:
+                            printf("Your vote is saved!\n");
+                            no =no+1;
+                            voting4 = true;
+                            break;}}
+}
+else{
+    printf("Please try again\n");}
+}
+if(counter == 4){
+        if (yes == no){
+            printf("\nThe result is draw\n");
+        }else if (no>yes){
+            printf("\nThe result is yes.\n");
+        }else if (yes>no){
+            printf("\nThe result is no.\n");
+        }
+        printf("\nTotal votes: %d\n", counter);
+        printf("Yes votes: %d\n", yes);
+        printf("No votes: %d\n", no);
     }
     
 }
-
-
-
-
-
 
 
 
